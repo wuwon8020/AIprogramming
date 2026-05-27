@@ -6,6 +6,10 @@ def app():
     # session_state 초기화  
     st.title("사용자의 질문을 입력 받아 LLM 응답을 출력해주는 웹 앱")
     # 캐시 함수
+    if not st.session_state.api_key:
+        st.error("api 페이지에서 api키를 입력해주세요!")
+        st.stop()
+        
     @st.cache_data
     def get_response(prompt, api_key):
 
