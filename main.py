@@ -1,21 +1,24 @@
 import streamlit as st
-import Lab21
+import Lab21_api
+import Lab21_1
 import Lab21_2
-
 st.sidebar.title("메뉴")
 
 page = st.sidebar.radio(
     "페이지 선택",
-    (
-        "Page1",
-        "Page2",
-        "Page3",
-        "Page4"
+    (   "api_key 입력",
+        "Lab21_1",
+        "Lab21_2",
+        "Lab21_3",
+        "Lab21_4"
     )
 )
 
-if page == "Page1":
-    Lab21.app()
+if page == "api_key 입력":
+    Lab21_api.app()
 
-elif page == "Page2":
+elif page == "Lab21_1":
+    Lab21_1.app()
+
+elif page == "Lab21_2":
     Lab21_2.app()

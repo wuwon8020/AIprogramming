@@ -1,18 +1,10 @@
 import streamlit as st
+import Lab21_api
 from openai import OpenAI
 
 def app():
     # session_state 초기화  
-    if "api_key" not in st.session_state:
-        st.session_state.api_key = ""
-
-    # API Key 입력
-    st.session_state.api_key = st.text_input(
-        "OpenAI API Key 입력",
-        type="password",
-        value=st.session_state.api_key
-    )
-
+    
     # 캐시 함수
     @st.cache_data
     def get_response(prompt, api_key):
@@ -33,9 +25,8 @@ def app():
     prompt = st.text_area("질문 입력")
 
     if st.button("실행"):
-
         if not st.session_state.api_key:
-            st.error("API Key를 입력하세요.")
+            st.error("api 페이지에서 api키를 입력해주세요!")
             st.stop()
 
         if not prompt:
