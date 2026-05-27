@@ -4,7 +4,7 @@ from openai import OpenAI
 
 def app():
     # session_state 초기화
-
+    st.title("Chat 페이지")
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
@@ -20,7 +20,7 @@ def app():
         client = OpenAI(api_key=api_key)
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model="gpt-5.4-mini",
             messages=messages
         )
 

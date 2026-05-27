@@ -419,6 +419,7 @@ from openai import OpenAI
 
 
 def app():
+    st.title("국립부경대학교 도서관 챗봇")
     if "messages" not in st.session_state:
         st.session_state.messages = []
 
@@ -429,11 +430,12 @@ def app():
     if "name" in st.session_state:
         st.write(st.session_state["name"])
 
+    @st.cache_data
     def get_response(messages, api_key):
         client = OpenAI(api_key=api_key)
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model="gpt-5.4-mini",
             messages=messages
         )
 

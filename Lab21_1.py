@@ -4,7 +4,7 @@ from openai import OpenAI
 
 def app():
     # session_state 초기화  
-    
+    st.title("사용자의 질문을 입력 받아 LLM 응답을 출력해주는 웹 앱")
     # 캐시 함수
     @st.cache_data
     def get_response(prompt, api_key):
@@ -13,7 +13,7 @@ def app():
         client = OpenAI(api_key=api_key)
 
         response = client.chat.completions.create(
-            model="gpt-4.1-mini",
+            model="gpt-5.4-mini",
             messages=[
                 {"role": "user", "content": prompt}
             ]

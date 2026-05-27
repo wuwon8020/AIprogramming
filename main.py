@@ -3,6 +3,7 @@ import Lab21_api
 import Lab21_1
 import Lab21_2
 import Lab21_3
+import Lab21_4
 st.sidebar.title("Lab21 과제 웹페이지")
 
 page = st.sidebar.radio(
@@ -26,3 +27,6 @@ elif page == "Lab21_2":
 
 elif page == "Lab21_3":
     Lab21_3.app()
+    
+elif page == "Lab21_4":
+    Lab21_4.app()
