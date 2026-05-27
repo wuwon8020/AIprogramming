@@ -4,8 +4,6 @@ from openai import OpenAI
 
 def app():
     # session_state 초기화
-    if "api_key" not in st.session_state:
-        st.session_state.api_key = ""
 
     if "messages" not in st.session_state:
         st.session_state.messages = []
